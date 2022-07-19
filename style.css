@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f1f1f1;
+}
+.center {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.box {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    transform: perspective(500px) rotate(-50deg) skew(25deg);
+    box-shadow: -90px 75px 20px rgba(0,0,0,0.3);
+    background: url(sunny1.JPEG);
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: 50% 50%;
+    transition: 0.5;
+}
+.box:hover {
+    transform: perspective(500px) rotate(-50deg) skew(25deg) translate(50px , -50px);
+    /* box-shadow: 左右の向きpx  上下の向きpx ぼかしpx 広がりpx 色 内側指定; */
+    box-shadow: -150px 115px 115px rgba(0,0,0,0.3);
+}
+.box::before {
+    content: "";
+    width: 70px;
+    height: 100%;
+    background: #111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewY(-40deg) translate(-70px, -30px);
+    background: url(sunny1.JPEG);
+
+    background-size: 40px;
+}
+.box::after {
+    content: "";
+    width: 100%;
+    height: 58px;
+    background: url(sunny1.JPEG);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: skewX(-50deg) translate(33px, 58px);
+    background-size: 40px;
+}
